@@ -15,7 +15,6 @@ export class Play extends Phaser.Scene {
 
   preload() {
     this.load.image('sky', 'assets/galaxy.jpg');
-    this.load.image('ground', 'assets/platform.png');
     this.load.image('star', 'assets/star.png');
     this.load.image('bomb', 'assets/bomb.png');
     this.load.spritesheet('dude', 'assets/dude.png', { frameWidth: 32, frameHeight: 48 });
@@ -73,7 +72,9 @@ export class Play extends Phaser.Scene {
     });
 
     this.stars.children.iterate(function (child) {
-      child.setBounceY(Phaser.Math.FloatBetween(0.4, 0.8));
+      child.setBounce(Phaser.Math.FloatBetween(0.4, 1));
+      child.setVelocity(Phaser.Math.Between(-30, 30), 20);
+      child.setCollideWorldBounds(true);
     });
 
     this.bombs = this.physics.add.group();
