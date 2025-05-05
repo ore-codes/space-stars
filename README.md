@@ -1,3 +1,5 @@
-# catch the stars
+# Space Stars
 
-![Download](download.png)
+![Initial](screenshots/initial.png)
+![Game Play](screenshots/gameplay.png)
+![Game Over](screenshots/gameover.png)
